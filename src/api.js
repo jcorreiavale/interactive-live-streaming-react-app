@@ -1,4 +1,4 @@
-export const authToken = "<Generated-from-dashbaord>";
+export const authToken = process.env.VIDEO_SDK_TOKEN;
 
 // API call to create meeting
 export const createMeeting = async () => {
