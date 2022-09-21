@@ -33,7 +33,7 @@ function HLSJoinScreen({ onDownstreamUrl }) {
 
   const handleOnClick = async (meetingId) => {
     const downstreamUrl = await fetchHlsDownstreamUrl({ meetingId });
-
+    console.log('downstreamUrl',downstreamUrl);
     onDownstreamUrl(downstreamUrl);
   };
 

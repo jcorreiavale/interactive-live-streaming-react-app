@@ -1,4 +1,4 @@
-export const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiI4MzJiNmNlOS1jZWVlLTQ2NTctOTljMi02YzViNTA2MjZmMmIiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTY2Mzc3NzY0MiwiZXhwIjoxNjY0MzgyNDQyfQ.VNHWKEzktPfkyVKD8KJ_y2H93H4ANcQmyaPtpkHasYw";
+export const authToken = process.env.VIDEO_SDK_TOKEN;
 
 // API call to create meeting
 export const createMeeting = async () => {
@@ -31,6 +31,6 @@ export const fetchHlsDownstreamUrl = async ({ meetingId }) => {
   const json = await res.json();
 
   const { downstreamUrl } = json?.data[0];
-
+    
   return downstreamUrl;
 };
