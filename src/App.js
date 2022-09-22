@@ -67,10 +67,11 @@ function VideoComponent(props) {
     if (webcamOn) {
       const mediaStream = new MediaStream();
       mediaStream.addTrack(webcamStream.track);
+      
       return mediaStream;
     }
   }, [webcamStream, webcamOn]);
-
+console.log('videoStream',videoStream);
   useEffect(() => {
     if (micRef.current) {
       if (micOn) {
@@ -98,14 +99,13 @@ function VideoComponent(props) {
           playsinline // very very imp prop
           pip={false}
           light={false}
-          controls={true}
-          muted={true}
-          playing={true}
+          controls
+          muted
+          playing
           //
           url={videoStream}
           //
-          height={"180px"}
-          width={"320px"}
+         
           onError={(err) => {
             console.log(err, "participant video error");
           }}
@@ -218,9 +218,10 @@ function App() {
 
   const isHost = useMemo(() => mode === "host", [mode]);
 
-  useEffect(() => {
-    fetchHlsDownstreamUrl({ meetingId: "0g7p-kgnq-spd5" });
-  }, []);
+  console.log('MY AUTH TOKEN ', authToken);
+  // useEffect(() => {
+  //   fetchHlsDownstreamUrl({ meetingId: "0g7p-kgnq-spd5" });
+  // }, []);
 
   return (
     <>
