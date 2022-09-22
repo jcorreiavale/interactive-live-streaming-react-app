@@ -1,4 +1,4 @@
-export const authToken = process.env.VIDEO_SDK_TOKEN;
+export const authToken = process.env.REACT_APP_NOT_SECRET_CODE;
 
 // API call to create meeting
 export const createMeeting = async () => {
